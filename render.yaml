@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: jenkins
+    env: docker
+    plan: free
+    repo: https://github.com/abdoulxx/jenkins-render.git
+    branch: main
+    rootDir: /
+    envVars:
+      - key: JENKINS_OPTS
+        value: "--prefix=/jenkins"
+    healthCheckPath: "/jenkins/login"
